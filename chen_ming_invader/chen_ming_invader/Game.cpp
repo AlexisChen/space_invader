@@ -4,6 +4,9 @@
 #include <string>
 #include "Actor.h"
 #include "SpriteComponent.h"
+#include "Player.h"
+#include "Enemy.h"
+#include <iostream>
 
 Game::Game()
 :mLib("DiceInvaders.dll")
@@ -31,17 +34,14 @@ void Game::RunLoop()
 		float currentTime = mSystem->getElapsedTime();
 		float deltaTime = currentTime - mLastTime;
 		mLastTime = currentTime;
-		float move = deltaTime * 160.0f;
+		//float move = deltaTime * 160.0f;
 
 		//process input
 		IDiceInvaders::KeyStatus keys;
 		mSystem->getKeyStatus(keys);
-		if (keys.right)
-			horizontalPosition += move;
-		else if (keys.left)
-			horizontalPosition -= move;
+		ProcessInput(keys);
 		//update game
-		UpdateGame();
+		UpdateGame(deltaTime);
 		
 		GenerateOutput();
 		
@@ -52,12 +52,21 @@ void Game::ShutDown()
 	mSystem->destroy();
 }
 
-void Game::ProcessInput()
+void Game::ProcessInput(IDiceInvaders::KeyStatus keys)
 {
+	for (auto act : mActors)
+	{
+		act->ProcessInput(keys);
+	}
 }
-void Game::UpdateGame() 
+void Game::UpdateGame(float deltaTime) 
 {
+	for (auto act : mActors) 
+	{
+		act->Update(deltaTime);
+	}
 }
+
 void Game::GenerateOutput() 
 {
 	for ( auto sp : mSprites)
@@ -71,29 +80,29 @@ void Game::LoadData()
 	//mSprites.push_back(mSystem->createSprite("data/player.bmp"));
 	std::ifstream infile("data/level.txt");
 	std::string line;
-	int posX = 32;
+	int posX = 16;
 	int posY = 16;
 	while (!std::getline(infile, line).eof())
 	{
+		std::cout << line << std::endl;
 		for (char& c : line) {
-			std::shared_ptr<Actor> actor = nullptr;
+			Actor* actor = nullptr;
 			switch (c) {
 				case 'A':
 				{
-					actor = std::make_unique<Actor>(this);
+					actor = new Enemy( this );
 					actor->SetSprite(mSystem->createSprite("data/enemy1.bmp"));
-					
 					break;
 				}
 				case 'B':
 				{
-					actor = std::make_unique<Actor>(this);
+					actor = new Enemy( this );
 					actor->SetSprite(mSystem->createSprite("data/enemy2.bmp"));
 					break;
 				}
 				case 'C':
 				{
-					actor = std::make_unique<Actor>(this);
+					actor = new Player( this );
 					actor->SetSprite(mSystem->createSprite("data/player.bmp"));
 					break;
 				}
@@ -101,17 +110,23 @@ void Game::LoadData()
 					break;
 			}
 			if (actor != nullptr) {
-				actor->SetPosition(Vector2(posX, posY));
+
+				actor->SetPos(Vector2(posX, posY));
 			}
 			posX += 32;
 		}
-		posX = 32;
-		posY += 16;
+		posX = 16;
+		posY += 32;
 	
 	}
 }
 void Game::UnLoadData() 
-{}
+{
+	while (!mActors.empty())
+	{
+		delete mActors.back();
+	}
+}
 
 void Game::AddSprite(SpriteComponent* sc)
 {
@@ -125,10 +140,20 @@ void Game::RemoveSprite(SpriteComponent* sc)
 		mSprites.erase(it);
 	}
 }
-void Game::AddActor(std::shared_ptr<Actor> actor)
+
+void Game::AddActor(Actor* actor)
 {
 	mActors.push_back(actor);
 }
-void Game::RemoveActor() 
+void Game::RemoveActor(Actor* actor)
 {
+	auto it = std::find(mActors.begin(), mActors.end(), actor);
+	if (it != mActors.end()) {
+		mActors.erase(it);
+	}
+}
+
+ISprite* Game::GetSprite(std::string fileName)
+{
+	return mSystem->createSprite(fileName.c_str() ); 
 }

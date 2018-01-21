@@ -1,18 +1,4 @@
-﻿  SpriteComponent.cpp
-c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\actor.h(7): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+﻿  Enemy.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
   c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\diceinvaders.h(5): note: see declaration of 'ISprite'
-c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\spritecomponent.cpp(26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  MoveComponent.cpp
-c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\movecomponent.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Math.cpp
-  Game.cpp
-c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\actor.h(7): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
-  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\diceinvaders.h(5): note: see declaration of 'ISprite'
-c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\game.cpp(104): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Component.cpp
-  chen_ming_invader.cpp
-  Actor.cpp
-c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\diceinvaders.h(5): warning C4099: 'ISprite': type name first seen using 'class' now seen using 'struct'
-  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\diceinvaders.h(4): note: see declaration of 'ISprite'
-  Generating Code...
   chen_ming_invader.vcxproj -> C:\Users\Alexis Chen\Documents\chen_ming_invader\Debug\chen_ming_invader.exe

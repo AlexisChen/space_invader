@@ -11,8 +11,8 @@ SpriteComponent::SpriteComponent(Actor* actor)
 
 SpriteComponent::~SpriteComponent()
 {
-	mOwner->mGame->RemoveSprite(this);
-	mSprite->destroy();
+	//mOwner->mGame->RemoveSprite(this);
+	//mSprite->destroy();
 }
 void SpriteComponent::SetSprite(ISprite* isp, int drawOrder)
 {

@@ -5,12 +5,14 @@
 #include <windows.h>
 #include <vector>
 #include <memory>
+#include <unordered_map>
 
 class SpriteComponent;
 class Actor;
+class Enemy;
 
 using SPRITEVEC = std::vector<std::shared_ptr<SpriteComponent> >;
-using ACTORVEC = std::vector<std::shared_ptr<Actor> >;
+using ACTORVEC = std::vector<std::unique_ptr<Actor> >;
 
 class DiceInvadersLib
 {
@@ -52,22 +54,26 @@ public:
 	bool Initialize();
 	void RunLoop();//execute the game loop while game is alive
 	void ShutDown();
-	void ProcessInput();
-	void UpdateGame();
+	void ProcessInput(IDiceInvaders::KeyStatus keys);
+	void UpdateGame(float deltaTime);
 	void GenerateOutput();
 	void LoadData();  //load the level file
 	void UnLoadData(); //unload the actors.
 	void AddSprite(SpriteComponent* sc);
 	void RemoveSprite(SpriteComponent* sc);
-	void AddActor(std::shared_ptr<Actor> actor);
-	void RemoveActor();
-
+	void AddActor(Actor* actor);
+	//void AddActor(std::unique_ptr<Actor> actor);
+	void RemoveActor(Actor* actor);
+	ISprite* GetSprite(std::string fileName);
+	std::vector<Enemy*> GetEnemies() { return mEnemies; }
 private:
 	DiceInvadersLib mLib;
 	IDiceInvaders* mSystem;//diceinvader system
 	std::vector<SpriteComponent*> mSprites;//a vector of all sprites
 	//SPRITEVEC mSprites;
-	ACTORVEC mActors;
+	std::vector<Actor*> mActors;
+	//ACTORVEC mActors;
 	float mLastTime;//to keep track of time of last frame;
+	std::vector<Enemy*> mEnemies;
 
 };

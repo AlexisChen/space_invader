@@ -2,6 +2,7 @@
 #include "Math.h"
 #include <string>
 #include <memory>
+#include "DiceInvaders.h"
 
 class Game;
 class ISprite;
@@ -18,21 +19,24 @@ public:
 		EDead
 	};
 	void SetSprite(ISprite* isp);
-	void ProcessInput();
-	void Update();
+	virtual void ProcessInput(IDiceInvaders::KeyStatus key) {}
+	virtual void Update(float deltaTime) {}
 	Game* mGame;
+	Actor::State mState;
 
-	void SetPosition(Vector2 pos) { mPosition = pos; }
+	void SetPos(Vector2 pos) { mPosition = pos; }
 	Vector2 GetPos() { return mPosition; }
 	void SetScale(Vector2 scale) { mScale = scale; }
 	Vector2 GetScale() { return mScale; }
+	CollisionComponent* GetCollision() { return mColl; }
 	
 
-private:
+protected:
 	Vector2 mPosition;
 	Vector2 mScale;
-	std::shared_ptr<SpriteComponent> mSprite;
-	MoveComponent* mMove;
+	SpriteComponent* mSprite;
+	//MoveComponent* mMove;
 	CollisionComponent* mColl;
 	int mDrawOrder;
+	float mSpeed;
 };
