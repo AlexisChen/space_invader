@@ -11,8 +11,8 @@ SpriteComponent::SpriteComponent(Actor* actor)
 
 SpriteComponent::~SpriteComponent()
 {
-	//mOwner->mGame->RemoveSprite(this);
-	//mSprite->destroy();
+	mOwner->mGame->RemoveSprite(this);
+	mSprite->destroy();
 }
 void SpriteComponent::SetSprite(ISprite* isp, int drawOrder)
 {
@@ -21,7 +21,7 @@ void SpriteComponent::SetSprite(ISprite* isp, int drawOrder)
 }
 void SpriteComponent::Draw()
 {
-	float horizontalPos = mOwner->GetPos().x - mOwner->GetScale().x*1.0f / 2;
-	float verticalPos = mOwner->GetPos().y - mOwner->GetScale().y*1.0f / 2;
+	float horizontalPos = mOwner->GetPos().x;
+	float verticalPos = mOwner->GetPos().y ;
 	mSprite->draw(horizontalPos, verticalPos);
 }

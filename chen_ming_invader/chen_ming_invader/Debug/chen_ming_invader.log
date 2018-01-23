@@ -1,4 +1,6 @@
-﻿  Enemy.cpp
+﻿  Game.cpp
 c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
   c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\diceinvaders.h(5): note: see declaration of 'ISprite'
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\game.cpp(108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\game.cpp(113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   chen_ming_invader.vcxproj -> C:\Users\Alexis Chen\Documents\chen_ming_invader\Debug\chen_ming_invader.exe

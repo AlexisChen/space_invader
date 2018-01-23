@@ -6,10 +6,12 @@
 #include <vector>
 #include <memory>
 #include <unordered_map>
+#include "Math.h"
 
 class SpriteComponent;
 class Actor;
 class Enemy;
+class Player;
 
 using SPRITEVEC = std::vector<std::shared_ptr<SpriteComponent> >;
 using ACTORVEC = std::vector<std::unique_ptr<Actor> >;
@@ -66,7 +68,18 @@ public:
 	void RemoveActor(Actor* actor);
 	ISprite* GetSprite(std::string fileName);
 	std::vector<Enemy*> GetEnemies() { return mEnemies; }
+	void RemoveEnemies(Enemy* e);
+	Player* GetPlayer() { return mPlayer; }
+	void GameOver();
+	void Score(int s);//increment current score, update highest if needed.
+	Vector2 GetWinSize() { return Vector2(mWindowWidth, mWindowHeight);  }
+	
 private:
+	void DrawWord();
+	void LoadLevel(int levelNum);//load level file 
+	void DrawStartPage();
+	int mWindowWidth;
+	int mWindowHeight;
 	DiceInvadersLib mLib;
 	IDiceInvaders* mSystem;//diceinvader system
 	std::vector<SpriteComponent*> mSprites;//a vector of all sprites
@@ -75,5 +88,12 @@ private:
 	//ACTORVEC mActors;
 	float mLastTime;//to keep track of time of last frame;
 	std::vector<Enemy*> mEnemies;
-
+	Player* mPlayer;
+	bool mGameOver;
+	int mCurrentScore;
+	int mHighestScore;
+	int mCurrentHealth;
+	int mLevel;
+	bool mGameWin;
+	bool mGameStarted; 
 };

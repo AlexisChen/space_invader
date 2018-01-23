@@ -1,5 +1,6 @@
 #include "Actor.h"
 #include "SpriteComponent.h"
+#include "CollisionComponent.h"
 #include "Game.h"
 
 Actor::Actor(Game* game)
@@ -13,6 +14,7 @@ Actor::Actor(Game* game)
 ,mSpeed(0.0f)
 {
 	mGame->AddActor(this);
+	mColl = new CollisionComponent(this);
 }
 
 Actor::~Actor() {
