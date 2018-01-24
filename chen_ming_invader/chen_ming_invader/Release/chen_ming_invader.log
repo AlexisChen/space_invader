@@ -1,0 +1,41 @@
+﻿  Actor.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Bomb.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  chen_ming_invader.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CollisionComponent.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+  Component.cpp
+  Enemy.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+Game.cpp(128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Math.cpp
+  Player.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Rocket.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SpriteComponent.cpp
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Game.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\Actor.h(8): warning C4099: 'ISprite': type name first seen using 'struct' now seen using 'class'
+  c:\users\alexis chen\documents\chen_ming_invader\chen_ming_invader\DiceInvaders.h(5): note: see declaration of 'ISprite'
+SpriteComponent.cpp(26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating code
+  All 535 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  chen_ming_invader.vcxproj -> C:\Users\Alexis Chen\Documents\chen_ming_invader\Release\chen_ming_invader.exe
